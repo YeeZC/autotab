@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AutoTab</title><link rel="icon" type="image/png" href="icons/icon-32.png"><link rel="stylesheet" href="style.css"></head>
+<body class="popup">
+  <header class="app-header"><a class="brand" href="popup.html" aria-label="AutoTab home" data-i18n-aria-label="home"><img class="brand-symbol" src="icons/icon-32.png" width="28" height="28" alt="">AutoTab</a><button id="settings" class="icon-button" aria-label="Open settings" data-i18n-aria-label="openSettings" title="Settings" data-i18n-title="settings"><span data-icon="settings"></span></button></header>
+  <main class="popup-main">
+    <div class="view-title"><h1><span data-i18n="tabs">Tabs</span></h1><span class="window-label"><span data-icon="window"></span><span data-i18n="currentWindow">Current window</span></span></div>
+    <div class="tab-stats" aria-label="Current window tab statistics" data-i18n-aria-label="tabStats">
+      <div><span class="stat-label"><span data-i18n="pending">Ungrouped</span></span><strong id="count">—</strong></div>
+      <div><span class="stat-label"><span data-i18n="grouped">Groups</span></span><strong id="group-count">—</strong></div>
+      <div><span class="stat-label"><span data-i18n="pinned">Pinned</span></span><strong id="pinned-count">—</strong></div>
+    </div>
+    <section class="domain-section" aria-label="Domains to organize" data-i18n-aria-label="pendingDomains">
+      <div class="section-caption"><h2><span data-i18n="byDomain">Group by domain</span></h2><span id="domain-count"></span></div>
+      <div id="domains" class="domain-list"></div>
+    </section>
+    <div class="popup-actions"><button class="primary" id="group"><span data-icon="sparkles"></span><span><span data-i18n="organize">Organize tabs</span></span><span class="button-tail" data-icon="arrow"></span></button><button class="text-button" id="ungroup" title="Ungroup all regular windows; keep every tab open" data-i18n-title="ungroupHint"><span data-icon="ungroup"></span><span data-i18n="ungroup">Ungroup all</span><span class="scope-label"><span data-i18n="allWindows">All windows</span></span></button></div>
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+  </main>
+  <footer class="popup-footer"><button id="provider-link" class="footer-button" title="Model settings" data-i18n-title="modelSettings"><span class="status-dot"></span><span id="provider-name"><span data-i18n="unconfigured">Set up a model</span></span></button><button id="schedule-link" class="footer-button" title="Schedule settings" data-i18n-title="scheduleSettings"><span data-icon="clock"></span><span id="schedule-label"><span data-i18n="manual">Manual</span></span></button></footer>
+  <script src="vendor/gsap.min.js"></script><script type="module" src="popup.js"></script>
+</body></html>

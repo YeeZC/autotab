@@ -1,0 +1,15 @@
+import { mkdirSync, readFileSync, rmSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const manifest = JSON.parse(readFileSync(resolve(root, 'extension/manifest.json'), 'utf8'));
+const destination = resolve(root, 'dist', `autotab-${manifest.version}.zip`);
+mkdirSync(resolve(root, 'dist'), { recursive: true });
+rmSync(destination, { force: true });
+const result = spawnSync('zip', ['-q', '-r', destination, '.', '-x', '*.DS_Store'], { cwd: resolve(root, 'extension'), stdio: 'inherit' });
+if (result.error) throw result.error;
+if (result.status !== 0) process.exit(result.status || 1);
+const verification = spawnSync('unzip', ['-t', destination], { encoding: 'utf8' });
+if (verification.status !== 0) throw new Error(verification.stdout || verification.stderr || 'ZIP verification failed');
+console.log(`Chrome Web Store upload package: ${destination}`);

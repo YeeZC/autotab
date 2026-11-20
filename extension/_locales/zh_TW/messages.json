@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "AutoTab · 智能标签分组"
+  },
+  "extensionDescription": {
+    "message": "通过 OpenAI 或 Anthropic 兼容 API 自动整理标签页。"
+  }
+}

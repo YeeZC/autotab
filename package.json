@@ -1,0 +1,17 @@
+{
+  "name": "autotab",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check.js",
+    "test:browser": "node scripts/check-browser.js",
+    "test:ui": "node scripts/check-ui.js",
+    "icons": "node scripts/render-icons.js",
+    "package": "node scripts/package.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

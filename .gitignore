@@ -1,0 +1,16 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+
+.artifacts/
+
+dist/
+
+store-assets/raw/
+
+github-pages/
+
+sites/
