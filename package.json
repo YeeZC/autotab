@@ -13,5 +13,23 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "description": "AI-assisted Chrome tab grouping with OpenAI-compatible and Anthropic-compatible APIs.",
+  "homepage": "https://yeezc.github.io/autotab/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YeeZC/autotab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YeeZC/autotab/issues"
+  },
+  "author": "YeeZC",
+  "keywords": [
+    "chrome-extension",
+    "tab-groups",
+    "tab-management",
+    "openai-compatible",
+    "anthropic-compatible",
+    "manifest-v3"
+  ]
 }
